@@ -6,29 +6,24 @@ import java.util.List;
 /**
  * 树节点.
  *
- * @author Ty Peng
- * @since 2019/9/12 10:49
+ * @author ty-peng
+ * @since 2019-11-09 17:21
  */
 public class TreeNode<T extends TreeNodeConvertible> {
     private String id;
-    private String text;
+    private String name;
     private String pid;
-    private Object attributes;
+    private Object data;
     private List<TreeNode<T>> nodes = new ArrayList<>();
-    /**
-     * 业务对象数据.
-     */
-    private T data;
 
     public TreeNode() {
     }
 
     public TreeNode(T entity) {
         this.id = entity.getNodeId() == null ? "" : entity.getNodeId();
-        this.text = entity.getNodeName();
+        this.name = entity.getNodeName();
         this.pid = entity.getParentNodeId() == null ? "" : entity.getParentNodeId();
-        this.attributes = entity.getAttributes();
-        this.data = entity;
+        this.data = entity.getData();
     }
 
     public String getId() {
@@ -40,12 +35,12 @@ public class TreeNode<T extends TreeNodeConvertible> {
         return this;
     }
 
-    public String getText() {
-        return text;
+    public String getName() {
+        return name;
     }
 
-    public TreeNode<T> setText(String text) {
-        this.text = text;
+    public TreeNode<T> setName(String name) {
+        this.name = name;
         return this;
     }
 
@@ -58,12 +53,12 @@ public class TreeNode<T extends TreeNodeConvertible> {
         return this;
     }
 
-    public Object getAttributes() {
-        return attributes;
+    public Object getData() {
+        return data;
     }
 
-    public TreeNode<T> setAttributes(Object attributes) {
-        this.attributes = attributes;
+    public TreeNode<T> setData(Object data) {
+        this.data = data;
         return this;
     }
 
@@ -76,12 +71,4 @@ public class TreeNode<T extends TreeNodeConvertible> {
         return this;
     }
 
-    public T getData() {
-        return data;
-    }
-
-    public TreeNode<T> setData(T data) {
-        this.data = data;
-        return this;
-    }
 }
