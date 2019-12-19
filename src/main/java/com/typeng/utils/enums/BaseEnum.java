@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.Optional;
 
 /**
- * 枚举基础方法.
- * <p>K 枚举对应 code 值的类型.</p>
+ * 枚举通用基础方法.
+ * <p>K - 枚举对应的 code 的类型.</p>
  *
  * @author ty-peng
  * @since 2019/11/27 18:10
@@ -25,11 +25,11 @@ public interface BaseEnum<K> {
      *
      * @param enumClass 枚举class
      * @param code      code
-     * @param <K>       code 的类型
      * @param <T>       实现了 BaseEnum 接口的枚举类型
+     * @param <K>       code 的类型
      * @return 对应的 T 类型枚举
      */
-    static <K, T extends BaseEnum> T getEnumByCode(Class<T> enumClass, K code) {
+    static <T extends BaseEnum<K>, K> T getEnumByCode(Class<T> enumClass, K code) {
         if (code == null) {
             return null;
         }
