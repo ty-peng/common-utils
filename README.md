@@ -9,3 +9,5 @@ Some common utils
  | 1 | [tree](./src/main/java/com/typeng/utils/tree) |  树形结构工具 |
  | 2 | [enums](./src/main/java/com/typeng/utils/enums) |  通用枚举工具 |
  | 3 | [office](./src/main/java/com/typeng/utils/office) |  通用Office文档工具（开发中） |
+ | 4 | [conventions](./src/main/java/com/typeng/utils/conventions) | 命名规范检查工具 |
+ 
