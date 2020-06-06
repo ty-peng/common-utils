@@ -11,8 +11,13 @@ import org.junit.jupiter.api.Test;
 class BeanCopyCodeGeneratorTest {
 
     @Test
-    void gen() {
-        BeanCopyCodeGenerator.gen(A.class, B.class);
+    void genConstructor() {
+        BeanCopyCodeGenerator.genConstructor(A.class, B.class);
+    }
+
+    @Test
+    void genConvertMethod() {
+        BeanCopyCodeGenerator.genConvertMethod(A.class, B.class);
     }
 
     @Test
